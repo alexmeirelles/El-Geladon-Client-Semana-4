@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "components/Modal/Modal";
 import "./AdicionaPaletaModal.css";
+import { PaletaService } from "services/PaletaService";
 
 
 function AdicionaPaletaModal({ closeModal }) {
@@ -13,6 +14,27 @@ function AdicionaPaletaModal({ closeModal }) {
     };
 
     const [state, setState] = useState(form);
+
+    const [canDisable, setCanDisable] = useState(true);
+
+    const canDisableSendButton = () => {
+    const response = !Boolean(
+        state.descricao.length
+        && state.foto.length
+        && state.sabor.length
+        && state.preco.length
+    );
+
+    setCanDisable(response);
+};
+
+
+useEffect(() => {
+    canDisableSendButton();
+})
+
+
+
 
     const handleChange = (e, name) => {
         setState({ ...state, [name]: e.target.value, });
@@ -72,14 +94,19 @@ function AdicionaPaletaModal({ closeModal }) {
                             onChange={(e) => handleChange(e, "foto")} />
                     </div>
 
-                    <input
-                        className="AdicionaPaletaModal__enviar"
-                        type="submit"
-                        value="Enviar" />
+                    <button
+                    className="AdicionaPaletaModal__enviar"
+                    type="button"
+                    disabled="{canDisable}" >
+                    Enviar
+                    </button>
                 </form>
             </div>
         </Modal>
     );
 }
+
+
+
 
 export default AdicionaPaletaModal;
