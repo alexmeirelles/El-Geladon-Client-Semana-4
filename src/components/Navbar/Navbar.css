@@ -70,6 +70,12 @@
       max-width: 320px;
     }
   }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
   
   @media (max-width: 400px) {
     .Header {
@@ -79,8 +85,27 @@
     .row {
       column-gap: 20px;
     }
+
+    .Logo {
+      width: 100%;
+    }
   
     .Logo__titulo {
       font-size: 1.5em;
     }
   }
+
+
+
+.Opcoes {
+  display: flex;
+}
+
+.Paleta {
+  background: none;
+  border: none;
+}
+
+.Paleta__icone {
+  cursor: pointer;
+}
