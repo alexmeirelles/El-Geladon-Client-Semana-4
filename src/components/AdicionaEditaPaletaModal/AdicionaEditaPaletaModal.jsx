@@ -2,22 +2,18 @@ import { useState, useEffect } from "react";
 import Modal from "components/Modal/Modal";
 import "./AdicionaEditaPaletaModal.css";
 import { PaletaService } from "services/PaletaService";
+
+
 import { ActionMode } from "constants/index";
 
-function AdicionaEditaPaletaModal({
-  closeModal,
-  onCreatePaleta,
-  mode,
-  paletaToUpdate,
-  onUpdatePaleta,
-}) {
+function AdicionaEditaPaletaModal({ closeModal, onCreatePaleta, mode, paletaToUpdate, onUpdatePaleta }) {
   const form = {
-    preco: paletaToUpdate?.preco ?? "",
-    sabor: paletaToUpdate?.sabor ?? "",
-    recheio: paletaToUpdate?.recheio ?? "",
-    descricao: paletaToUpdate?.descricao ?? "",
-    foto: paletaToUpdate?.foto ?? "",
-  };
+    preco: paletaToUpdate?.preco ?? '',
+    sabor: paletaToUpdate?.sabor ?? '',
+    recheio: paletaToUpdate?.recheio ?? '',
+    descricao: paletaToUpdate?.descricao ?? '',
+    foto: paletaToUpdate?.foto ?? '',
+  }
 
   const [state, setState] = useState(form);
   const handleChange = (e, name) => {
