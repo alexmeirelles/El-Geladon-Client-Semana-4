@@ -5,7 +5,7 @@ import { PaletaService } from "services/PaletaService";
 import PaletaDetalhesModal from "components/PaletaDetalhesModal/PaletaDetalhesModal";
 
 
-function PaletaLista({ paletaCriada }) {
+function PaletaLista({ paletaCriada, mode }) {
   const [paletas, setPaletas] = useState([]);
 
   const [paletaSelecionada, setPaletaSelecionada] = useState({});
@@ -53,13 +53,14 @@ useEffect(() => {
     <div className="PaletaLista">
       {paletas.map((paleta, index) => (
         <PaletaListaItem
-           key={`PaletaListaItem-${index}`}
-           paleta={paleta}
-           quantidadeSelecionada={paletaSelecionada[index]}
-           index={index}
-           onAdd={(index) => adicionarItem(index)}
-      onRemove={(index) => removerItem(index)}
-      clickItem={(paletaId) => getPaletaById(paletaId)}
+        mode={mode}
+        key={`PaletaListaItem-${index}`}
+        paleta={paleta}
+        quantidadeSelecionada={paletaSelecionada[index]}
+        index={index}
+        onAdd={index => adicionarItem(index)}
+        onRemove={index => removerItem(index)}
+        clickItem={(paletaId) => getPaletaById(paletaId)}
            />
       ))}
      {paletaModal && <PaletaDetalhesModal paleta={paletaModal} closeModal={() => setPaletaModal(false)} />}
