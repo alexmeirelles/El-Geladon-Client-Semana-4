@@ -8,6 +8,6 @@ const PaletaContext = {
   };
   
   export const Api = {
-    baseUrl: process.env.REACT_APP_API_URL,
+    baseUrl: "https://server-el-geladon.onrender.com",
     ...PaletaContext,
   };
