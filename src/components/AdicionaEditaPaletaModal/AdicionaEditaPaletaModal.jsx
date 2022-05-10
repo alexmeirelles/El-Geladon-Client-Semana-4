@@ -52,7 +52,7 @@ function AdicionaEditaPaletaModal({ closeModal, onCreatePaleta, mode, paletaToUp
       sabor: titulo,
       descricao,
       preco,
-      foto: `assets/IMG/${renomeiaCaminhoFoto(foto)}`,
+      foto: `assets/images/${renomeiaCaminhoFoto(foto)}`,
     };
 
     const serviceCall = {
