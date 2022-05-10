@@ -33,7 +33,7 @@ function PaletaLista({ paletaCriada, mode, updatePaleta, deletePaleta, paletaEdi
 
   const getPaletaById = async (paletaId) => {
     const response = await PaletaService.getById(paletaId);
-    setPaletaModal(response);
+   
     const mapper = {
       [ActionMode.NORMAL]: () => setPaletaModal(response),
       [ActionMode.ATUALIZAR]: () => updatePaleta(response),
