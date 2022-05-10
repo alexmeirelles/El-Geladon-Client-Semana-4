@@ -62,7 +62,7 @@ function PaletaLista({ paletaCriada, mode, updatePaleta, deletePaleta, paletaEdi
 
 useEffect(() => {
     if (paletaCriada) adicionaPaletaNaLista(paletaCriada);
-}, [paletaCriada]);
+}, [paletaCriada, adicionaPaletaNaLista]);
 
 useEffect(() => {
   getLis();
