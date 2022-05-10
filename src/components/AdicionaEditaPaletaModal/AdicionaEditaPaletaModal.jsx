@@ -79,7 +79,9 @@ function AdicionaEditaPaletaModal({ closeModal, onCreatePaleta, mode, paletaToUp
     };
 
     setState(reset);
+    onCreatePaleta(response);
     closeModal();
+  
   };
 
   return (
