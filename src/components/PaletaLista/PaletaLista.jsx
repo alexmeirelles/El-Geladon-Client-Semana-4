@@ -14,7 +14,7 @@ function PaletaLista({ paletaCriada, mode, updatePaleta, deletePaleta, paletaEdi
 
   const adicionarItem = (paletaIndex) => {
     const paleta = {
-      [paletaIndex]: (paletaSelecionada[paletaIndex] || 0) + 1,
+      [paletaIndex]: Number(paletaSelecionada[paletaIndex] || 0) + 1,
     };
     setPaletaSelecionada({ ...paletaSelecionada, ...paleta });
   };
