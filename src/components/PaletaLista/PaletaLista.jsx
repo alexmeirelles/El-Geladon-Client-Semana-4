@@ -27,7 +27,7 @@ function PaletaLista({ paletaCriada, mode, updatePaleta, deletePaleta, paletaEdi
   };
 
   const getLis = async () => {
-    const response = await PaletaService.getLista();
+    const response = await PaletaService.getLis();
     setPaletas(response);
   };
 
