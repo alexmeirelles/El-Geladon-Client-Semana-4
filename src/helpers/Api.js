@@ -8,6 +8,6 @@ const PaletaContext = {
   };
   
   export const Api = {
-    baseUrl: "https://el-geladon-server-semana-4-production.up.railway.app/",
+    baseUrl: process.env.REACT_APP_API_URL,
     ...PaletaContext,
   };
